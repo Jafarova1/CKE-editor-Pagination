@@ -1,0 +1,38 @@
+﻿@model List<CategoryVM>
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<div class="container my-3">
+    <h2 class="text-center">Archive</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="py-1">
+                            @item.Name
+                        </td>
+                        <td>
+                            <form style="display: inline-block;" method="post" asp-action="ExtractCategory" asp-route-id="@item.Id">
+                                <button type="submit" class="btn btn-primary btn-rounded btn-fw">Extract</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

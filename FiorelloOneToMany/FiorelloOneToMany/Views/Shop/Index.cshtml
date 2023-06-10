@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section id="products" data-count="@ViewBag.count">
+    <div class="container">
+        <h1 class="text-center my-2">Products</h1>
+        <div class="row" id="parent-elem">
+            <partial name="_ProductsPartial"/>
+        </div>
+        <div class="row my-2 d-flex justify-content-center">
+            <button class="btn btn-primary show-more-btn">Show more</button>
+            <button class="btn btn-primary show-less-btn d-none">Show less</button>
+        </div>
+
+    </div>
+</section>
+
+@section Scripts{
+        <script src="~/js/shop.js"></script>
+        <script src="~/js/basket.js"></script>
+}
+
+
+

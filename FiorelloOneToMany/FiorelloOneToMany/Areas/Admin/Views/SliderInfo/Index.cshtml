@@ -1,0 +1,60 @@
+﻿@model List<SliderInfoVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <div class="container context pl-lg-5 ml-lg-3">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="text">
+                <div class="create-btn">
+                    <a asp-action="Create" class="btn btn-success btn-rounded btn-fw ">Create</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>SignImage</th>
+                                <th>Description </th>
+                                <th>Title</th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var slideriInfo in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="~/images/@slideriInfo.SignImages" alt="image" style="with:90px;height:70px" />
+                                    </td>
+                                    <td>
+                                        @slideriInfo.Description
+                                    </td>
+                                      <td>
+                                        @slideriInfo.Title
+                                    </td>
+                                    <td>
+                              
+                                    </td>
+                                    <td>
+                                        <a asp-action="Detail" asp-route-id="@slideriInfo.Id" class="btn btn-inverse-primary btn-fw">Detail</a>
+                               
+                           
+                                        <form style="display:inline-block" method="post" asp-action="Delete" asp-route-id="@slideriInfo.Id">
+                                            <button type="submit" class="btn-primary btn-primary-danger btn-rounded btn-fw">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                <div class="img">
+                    <img src="img/h2-sign-img.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+

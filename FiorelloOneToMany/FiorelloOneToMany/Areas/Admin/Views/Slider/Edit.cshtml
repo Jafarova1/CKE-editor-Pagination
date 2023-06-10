@@ -1,0 +1,19 @@
+﻿@model SliderEditVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container my-5">
+    <div class="slider-image">
+        <img src="~/img/@Model.Image" style="width:500px;height:300px"/>
+
+    </div>
+    <form method="post" asp-action="Edit" enctype="multipart/form-data">
+        <input style="width:500px;" asp-for="NewImage" class="form-control mt-3"/>
+        <span asp-validation-for="NewImage" class="text-danger d-block" asp-></span>
+        <button class="btn btn-success btn-rounded btn-fw mt-3">Submit</button>
+        <a asp-action="Index" class="btn-success btn-rounded btn-fw ">Back</a>
+    </form>
+</div>
+

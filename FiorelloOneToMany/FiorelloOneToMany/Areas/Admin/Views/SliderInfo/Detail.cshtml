@@ -1,0 +1,47 @@
+﻿@model SliderInfoVM
+@{
+    ViewData["Title"] = "Deatil";
+}
+
+<div class="container">
+    <div class="table-responsive pt-3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="~/images/@Model.SignImages" alt="image" style="with:100px;height:70px" />
+                    </td>
+                    <td>
+                        @Model.Title
+                    </td>
+                    <td>
+                    <td>
+                            @Model.Description
+                    </td>
+                    </td>
+                 
+               
+
+                </tr>
+
+            </tbody>
+        </table>
+        <br></br>
+            <a asp-action="Index" class="btn btn-outline-info btn-fw">Back</a>
+    </div>
+</div>
+
